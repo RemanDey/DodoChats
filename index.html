@@ -1,39 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DodoTalks</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dodo AI</title>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="splash-screen">
+  <!-- Splash Screen (5 seconds) -->
+  <div id="splash-screen">
     <div class="splash-content">
-        <h1>Dodo AI</h1>
-        <p><i>An Intelligent Creation by Reman Dey</i></p>
-        <div class="loader">
-            <span></span><span></span><span></span>
-        </div>
+      <h1>Dodo AI</h1>
+      <p>Crafted by Reman Dey</p>
     </div>
-</div>
+  </div>
 
-
-    <!-- Main Chat UI (initially hidden) -->
-    <div class="chat-container" style="display: none;">
-        <div class="chat-header">
-            <i class="fas fa-brain"></i> Dodo
-        </div>
-        <div class="chat-messages" id="chat-messages"></div>
-        <div class="chat-input">
-            <input type="text" id="user-input" placeholder="Type your message..." autofocus>
-            <button id="send-button"><i class="fas fa-location-arrow"></i></button>
-        </div>
+  <!-- Chat UI (initially hidden) -->
+  <div class="chat-container" style="display: none;">
+    <!-- Header -->
+    <div class="chat-header">
+      <i class="fas fa-brain"></i> Dodo
     </div>
 
-    <script src="script.js"></script>
+    <!-- Messages -->
+    <div class="chat-messages" id="chat-messages"></div>
+
+    <!-- Input Bar -->
+    <div class="chat-input">
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Type your message..."
+        autocomplete="off"
+      />
+      <button id="send-button">
+        <i class="fas fa-location-arrow"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main chatbot logic -->
+  <script src="script.js"></script>
+
+  <!-- Splash screen transition -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.getElementById("splash-screen").style.display = "none";
+        document.querySelector(".chat-container").style.display = "flex";
+      }, 5000);
+    });
+  </script>
 </body>
 </html>
