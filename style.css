@@ -1,4 +1,4 @@
-/* === Dodo Chat UI (Modern + Responsive + Splash + Loader) === */
+/* === Dodo Chat UI (Modern, Responsive, Splash, Loader) === */
 
 html, body {
     height: 100%;
@@ -8,6 +8,7 @@ html, body {
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     color: #f1f1f1;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 /* === Splash Screen === */
@@ -78,7 +79,7 @@ html, body {
     to { opacity: 0; visibility: hidden; }
 }
 
-/* === Chat Container === */
+/* === Chat Layout === */
 .chat-container {
     display: flex;
     flex-direction: column;
@@ -108,7 +109,7 @@ html, body {
     font-size: 1.2em;
 }
 
-/* Message Area */
+/* Messages */
 .chat-messages {
     flex-grow: 1;
     padding: 16px;
@@ -116,11 +117,10 @@ html, body {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    background-color: transparent;
     scroll-behavior: smooth;
 }
 
-/* Message Bubbles */
+/* Message Bubble */
 .message {
     max-width: 80%;
     padding: 12px 16px;
@@ -168,27 +168,29 @@ html, body {
     border-radius: 15px;
 }
 
-/* Chat Input Area */
+/* Input Area */
 .chat-input {
     display: flex;
-    padding: 16px;
+    align-items: center;
+    padding: 12px;
     background-color: rgba(30, 30, 50, 0.7);
     border-top: 1px solid #3d3d5c;
     backdrop-filter: blur(8px);
-    gap: 12px;
+    gap: 10px;
+    box-sizing: border-box;
 }
 
 .chat-input input[type="text"] {
     flex-grow: 1;
+    min-width: 0;
     padding: 12px 16px;
+    font-size: 1em;
     border: none;
     border-radius: 30px;
-    font-size: 1em;
-    outline: none;
     background-color: #1e1e2e;
     color: #f1f1f1;
     box-shadow: inset 2px 2px 5px #111122, inset -2px -2px 5px #2a2a3a;
-    transition: box-shadow 0.3s;
+    outline: none;
 }
 
 .chat-input input[type="text"]:focus {
@@ -196,19 +198,19 @@ html, body {
 }
 
 .chat-input button {
+    flex-shrink: 0;
     background: linear-gradient(135deg, #3da9fc, #1976d2);
     color: white;
     border: none;
     border-radius: 50%;
-    padding: 12px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.2em;
     cursor: pointer;
-    font-size: 1.3em;
-    transition: transform 0.2s ease, box-shadow 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    transition: transform 0.2s ease, box-shadow 0.2s;
 }
 
 .chat-input button:hover {
@@ -220,31 +222,32 @@ html, body {
     transform: translateY(1px);
 }
 
+.chat-input button i {
+    margin: 0;
+}
+
 /* Animations */
 @keyframes fadeInSlideUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeInSlideLeft {
     from { opacity: 0; transform: translateX(20px); }
     to { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes fadeInSlideRight {
     from { opacity: 0; transform: translateX(-20px); }
     to { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes pulse {
     0%, 100% { opacity: 0.7; }
     50% { opacity: 1; }
 }
 
-/* === Responsive Tweaks === */
+/* Responsive Fixes */
 @media (max-width: 600px) {
     .chat-header {
-        font-size: 1.2em;
+        font-size: 1.3em;
         padding: 12px;
     }
 
@@ -254,8 +257,7 @@ html, body {
     }
 
     .chat-input {
-        flex-direction: row;
-        padding: 12px;
+        padding: 10px;
     }
 
     .chat-input input[type="text"] {
@@ -265,6 +267,14 @@ html, body {
     .chat-input button {
         width: 42px;
         height: 42px;
-        font-size: 1.2em;
+        font-size: 1em;
+    }
+
+    .splash-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .splash-content p {
+        font-size: 1rem;
     }
 }
