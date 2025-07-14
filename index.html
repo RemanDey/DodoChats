@@ -3,8 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DodoChats</title>
-    <body>
-        Reman is now rewiring Dodo's brain.....! meanwhile you can try <a href="https://remandey.github.io/FriendForge/">FriendForge</a>or discover more from his <a href="https://remandey.github.io/my-portfolio/">portfolio</a>.    
-    </body>
+    <title>DodoTalks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="splash-screen">
+    <div class="splash-content">
+        <h1>Dodo</h1>
+        <p>by Reman Dey</p>
+        <div class="loader">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Main Chat UI (initially hidden) -->
+    <div class="chat-container" style="display: none;">
+        <div class="chat-header">
+            <i class="fas fa-brain"></i> Dodo
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message..." autofocus>
+            <button id="send-button">
+                <i class="fas fa-paper-plane"></i> Send
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
