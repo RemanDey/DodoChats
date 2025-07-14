@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!response.ok) {
           const errData = await response.json();
           console.error('Gemini API Error:', errData);
-          return 'API error: ' + (errData.error?.message || 'Unknown error');
+          return "Dodo's brain cells are overloaded!!!He needs rest now...";
         }
 
         const data = await response.json();
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return reply || "I didn't understand that. Try rephrasing?";
       } catch (err) {
         console.error('Fetch error:', err);
-        return "Couldn't reach the AI service. Try again later.";
+        return "Couldn't access Dodo's Brain at this moment. Try again later.";
       }
     }
 
@@ -123,5 +123,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Initial bot greeting
-  addMessage("Hello! I'm Dodo, your AI companion. Ask me anything.", 'bot', 500);
+  addMessage("Hello! I'm Dodo, your AI companion. Ask me anything...", 'bot', 500);
 });
