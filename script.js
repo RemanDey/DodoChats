@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendButton = document.getElementById('send-button');
 
   // OPTIONAL: Use your Gemini API key here if needed
-  const GEMINI_API_KEY = 'AIzaSyB0svCI9QLtSmw20qA28NfYFgKbMFJaRSw'; // Replace with real key if using Gemini API
+  const GEMINI_API_KEY = 'AIzaSyChr_ty2gP-a5L688dYRcHrYPqCIrAA3hs'; // Replace with real key if using Gemini API
 
   // Adds a message to the chat with optional typing effect for bot
   function addMessage(text, sender, delay = 0) {
